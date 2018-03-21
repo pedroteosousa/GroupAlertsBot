@@ -1,0 +1,24 @@
+{
+  "name": "maratonime-admin",
+  "version": "0.0.1",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedroteosousa/MaratonIME-Admin.git"
+  },
+  "author": "Pedro Sousa <pedroteosousa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pedroteosousa/MaratonIME-Admin/issues"
+  },
+  "homepage": "https://github.com/pedroteosousa/MaratonIME-Admin#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "lowdb": "^0.16.1",
+    "node-telegram-bot-api": "^0.27.0"
+  }
+}
