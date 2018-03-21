@@ -21,7 +21,7 @@ bot.on('message', (message) => {
 	if (message.reply_to_message) {
 		var reply = message.reply_to_message
 		if (reply.text == add_msg) {
-			db.user.add_msg(id, message.text, message.from.username)
+			db.user.add_msg(id, message.text, message.from)
 			sendHTML(id, "Message was added sucessfully.")
 		}
 		if (reply.text == rmv_msg) {
@@ -62,7 +62,7 @@ var formatMessages = function (msg) {
 	var message = ""
 	for (var i in msg) {
 		message += "<b>Alert " + (parseInt(i)+1) + ":</b> " + msg[i].text +
-			" <code>by " + msg[i].username + "</code>\n\n"
+			" <code>- " + msg[i].username + "</code>\n\n"
 	}
 	return message
 }

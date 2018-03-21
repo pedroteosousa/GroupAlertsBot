@@ -23,10 +23,13 @@ module.exports.user = (function () {
 		var user = User.get(old_id).assign({id : new_id}).write()
 		return user
 	}
-	User.add_msg = function (id, msg, username) {
+	User.add_msg = function (id, msg, from) {
 		var user = User.get(id)
 		var messages = user.get('messages').value()
-		messages.push({text: msg, username: username})
+		var name = from.username
+		if (name === undefined)
+			name = from.first_name
+		messages.push({text: msg, username: name})
 		user.assign({messages: messages}).write()
 		return user
 	}
